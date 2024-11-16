@@ -69,11 +69,20 @@ function eliminarTarea(id) {
 }
 //Función tiene como objetivo cambiar el estado de completado de una tarea específica en el arreglo 
 function cambiarEstado(id) {
-    const tarea = tareas.find(tarea => tarea.id === id);//Obj elemento que cumpla la condición dada.
+    const tarea = tareas.find(tarea => tarea.id === id); // Encuentra la tarea con el ID proporcionado
     if (tarea) {
-        tarea.completado = !tarea.completado;
+        tarea.completado = !tarea.completado; // Cambia el estado de completado
     }
-    renderizarTareas();
+
+    // Encuentra el elemento correspondiente en el DOM y alterna la clase "completed"
+    const filas = document.querySelectorAll('#task-list tr');
+    filas.forEach(fila => {
+        if (parseInt(fila.children[0].textContent) === id) {
+            fila.children[1].classList.toggle('completed'); // Alterna la clase "completed" en la descripción
+        }
+    });
+
+    actualizarResumen(); // Actualiza los contadores
 }
 
 // Inicializa la lista de tareas al cargar la página
