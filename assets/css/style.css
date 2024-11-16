@@ -9,13 +9,29 @@ body {
 }
 
 .container {
-    width: 500px;
+    width: 600px; 
     border: 1px solid black;
     background-color: rgb(235, 233, 233);
     padding: 20px;
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.summary {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+.numero-tareas {
+    flex: 1; 
+}
+
+table {
+    width: 60%; 
+    border-collapse: collapse; 
+}
 
 .task-input {
     display: flex;
@@ -54,12 +70,12 @@ button:hover {
 
 th, td {
     border: none;
-    text-align: center;
+    text-align: left;
     padding: 5px;
 }
 
 .completed {
-    color: gray;
+       color: gray; 
 }
 
 
