@@ -1,5 +1,4 @@
 //id tareas
-
 let tareas = [
     { id: 1, descripcion: "Estudiar DesafíoLatam", completado: false },
     { id: 2, descripcion: "Hacer ejercicio", completado: true },
@@ -8,7 +7,6 @@ let tareas = [
 ];
 
 //Función para actualizar el contador de tareas totales y contador de tareas completadas
-
 function actualizarResumen() {
     document.getElementById('total-tareas').textContent = tareas.length;
     const tareasCompletadas = tareas.filter(tarea => tarea.completado).length;
@@ -16,7 +14,6 @@ function actualizarResumen() {
 }
 
 //Función para mostrar la lista de tareas y actualizarla
-
 function renderizarTareas() {
     const taskList = document.getElementById('task-list');//Selecciona el  HTML con el id 
     taskList.innerHTML = ''; // Borra el contenido actual de task-list para que la lista se pueda regenerar desde cero
@@ -40,7 +37,6 @@ function renderizarTareas() {
 }
 
 //Función que permite agregar una nueva tarea al arreglo y actualizar
-
 function agregarTarea() {
     const nuevaTareaDescripcion = document.getElementById('new-task').value.trim();
     if (nuevaTareaDescripcion) {
